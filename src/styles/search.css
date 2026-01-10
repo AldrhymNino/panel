@@ -1,0 +1,27 @@
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: var(--color-gray-100);
+  border-radius: var(--radius);
+  width: 320px;
+}
+
+.search-box svg {
+  color: var(--color-gray-400);
+  flex-shrink: 0;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  background-color: inherit;
+  color: var(--color-gray-700);
+}
+
+.search-box input::placeholder {
+  color: var(--color-gray-400);
+}
