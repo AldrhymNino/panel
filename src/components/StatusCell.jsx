@@ -52,7 +52,7 @@ function StatusCell({ stage }) {
 
         {status === "in-progress" && (
           <div className="progress-container">
-            <span className="label" ><Check size={16} /> {label}</span>
+            <span className="label" ><Circle size={15} style={{fill: 'var(--color-primary)',width: '10px', height: '10px'}} /> {label}</span>
             <div className="progress-bar">
               <div className="progress-fill" style={{ width: `${progress}%` }}></div>
             </div>

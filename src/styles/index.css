@@ -5,16 +5,21 @@
 }
 
 :root {
-  --color-primary: #257beb;
-  --color-primary-hover: #4799db;
-  --color-success: #10b981;
-  --color-success-light: #d1fae5;
+  --color-primary: #2f7cf6;
+  --color-primary-hover: #4a8df8;
+
+  --color-success: #22c55e;
+  --color-success-light: #dcfce7;
+
   --color-warning: #f59e0b;
   --color-warning-light: #fef3c7;
+
   --color-danger: #ef4444;
   --color-danger-light: #fee2e2;
+
   --color-info: #3b82f6;
   --color-info-light: #dbeafe;
+
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
   --color-gray-200: #e5e7eb;
@@ -25,18 +30,29 @@
   --color-gray-700: #374151;
   --color-gray-800: #1f2937;
   --color-gray-900: #111827;
+
   --color-white: #ffffff;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --radius-sm: 4px;
-  --radius: 8px;
-  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+  --shadow: 0 2px 4px rgba(0,0,0,.08);
+  --shadow-md: 0 6px 12px rgba(0,0,0,.12);
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
 }
 
 body {
   font-family: "Segoe UI";
+  font-size: 18px;
+  font-weight: 100;
   background-color: var(--color-gray-50);
   color: var(--color-gray-900);
   line-height: 1.5;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
 }

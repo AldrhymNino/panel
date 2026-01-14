@@ -1,0 +1,104 @@
+/* PANEL GENERAL */
+.stage-workers-panel {
+  display: grid;
+  grid-template-columns: 260px repeat(5, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+/* COLUMNA BASE */
+.stage-workers-column {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: solid 1px var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* COLUMNA TRABAJADORES (POOL) */
+.stage-workers-column.pool {
+  background: var(--color-gray-50);
+}
+
+/* HEADER DE COLUMNA */
+.stage-workers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  margin-bottom: 10px;
+}
+
+/* CONTADOR */
+.stage-workers-count {
+  background: var(--color-gray-200);
+  color: var(--color-gray-700);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* BUSCADOR */
+.workers-search {
+  width: 100%;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--color-gray-800);
+  margin-bottom: 12px;
+  outline: none;
+}
+
+.workers-search::placeholder {
+  color: var(--color-gray-400);
+}
+
+.workers-search:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(47,124,246,0.15);
+}
+
+/* LISTA DE TRABAJADORES */
+.stage-workers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* TARJETA DE TRABAJADOR */
+.worker-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--color-gray-800);
+  cursor: grab;
+  user-select: none;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.worker-card:hover {
+  background: var(--color-gray-50);
+  box-shadow: var(--shadow);
+}
+
+.worker-card:active {
+  cursor: grabbing;
+  box-shadow: var(--shadow-md);
+}
+
+/* FEEDBACK VISUAL DURANTE DRAG */
+.worker-card[data-dnd-draggable] {
+  opacity: 0.95;
+}

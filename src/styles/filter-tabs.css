@@ -3,6 +3,7 @@
   gap: 8px;
 }
 
+
 .filter-tab {
   padding: 5px 20px;
   background: var(--color-gray-100);
@@ -21,8 +22,6 @@
 }
 
 .filter-tab.active {
-  background: #9bcffac9;
-  opacity: 0.8;
-  border-color: var(--color-gray-400);
+  background: #eef6ff;
   color: var(--color-primary);
 }

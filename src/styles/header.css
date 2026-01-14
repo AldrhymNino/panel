@@ -12,12 +12,6 @@
   align-items: center;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 .logo-text {
   display: flex;
   flex-direction: column;
