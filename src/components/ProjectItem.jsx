@@ -3,7 +3,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { GripVertical } from "lucide-react";
 
 import StatusCell from "./StatusCell";
-import { stageColumns } from "../data/projects";
+import { useStageWorkers } from "../context/StageWorkersContext";
 
 const ProjectItem = ({ project }) => {
   const {
@@ -16,6 +16,8 @@ const ProjectItem = ({ project }) => {
   } = useSortable({
     id: project.id,
   });
+
+  const { stageColumns, stages } = useStageWorkers();
 
   const style = {
     transform: CSS.Transform.toString(transform),

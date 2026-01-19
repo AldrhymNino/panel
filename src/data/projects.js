@@ -8,29 +8,40 @@ export const initialProjects = [
       corte: {
         status: "completed",
         label: "Terminado",
-        workers: ["Juan Alvarez", "Mario Lopez"]
       },
       dobles: {
         status: "in-progress",
         label: "En Proceso",
         progress: 65,
-        workers: ["Laura Valentina"]
       },
       soldadura: {
         status: "pending",
         label: "Pendiente",
-        workers: []
       },
       pintura: {
         status: "waiting",
         label: "Espera",
-        workers: []
       },
       ensamble: {
         status: "waiting",
         label: "Espera",
-        workers: []
       },
+      ensamble1: {
+        status: "pending",
+        label: "pendiente"
+      },
+      ensamble2: {
+        status: "pending",
+        label: "Pendiente"
+      },
+      ensamble3: {
+        status: "pending",
+        label: "Pendiente"
+      },
+      ensamble4: {
+        status: "pending",
+        label: "Pendiente"
+      }
     },
   },
   {
@@ -42,29 +53,40 @@ export const initialProjects = [
       corte: {
         status: "completed",
         label: "Terminado",
-        workers: []
       },
       dobles: {
         status: "completed",
         label: "Terminado",
-        workers: []
       },
       soldadura: {
         status: "in-progress",
         label: "En Proceso",
         progress: 30,
-        workers: ["Camilo Paz"]
       },
       pintura: {
         status: "waiting",
         label: "Espera",
-        workers: []
       },
       ensamble: {
         status: "waiting",
         label: "Espera",
-        workers: []
       },
+      ensamble1: {
+        status: "pending",
+        label: "pendiente"
+      },
+      ensamble2: {
+        status: "pending",
+        label: "Pendiente"
+      },
+      ensamble3: {
+        status: "pending",
+        label: "Pendiente"
+      },
+      ensamble4: {
+        status: "pending",
+        label: "Pendiente"
+      }
     },
   },
   {
@@ -78,28 +100,39 @@ export const initialProjects = [
         label: "Material",
         alert: "Falta acero",
         progress: 20,
-        workers: []
       },
       dobles: {
         status: "waiting",
         label: "Espera",
-        workers: []
       },
       soldadura: {
         status: "waiting",
         label: "Espera",
-        workers: []
       },
       pintura: {
         status: "waiting",
         label: "Espera",
-        workers: []
       },
       ensamble: {
         status: "pending",
         label: "Pendiente",
-        workers: []
       },
+      ensamble1: {
+        status: "pending",
+        label: "pendiente"
+      },
+      ensamble2: {
+        status: "pending",
+        label: "Pendiente"
+      },
+      ensamble3: {
+        status: "pending",
+        label: "Pendiente"
+      },
+      ensamble4: {
+        status: "pending",
+        label: "Pendiente"
+      }
     },
   },
   {
@@ -111,37 +144,40 @@ export const initialProjects = [
       corte: {
         status: "completed",
         label: "Terminado",
-        workers: []
       },
       dobles: {
         status: "completed",
         label: "Terminado",
-        workers: []
       },
       soldadura: {
         status: "completed",
         label: "Terminado",
-        workers: []
       },
       pintura: {
         status: "in-progress",
         label: "Pintura",
         progress: 50,
-        workers: ["Andres Ramirez"]
       },
       ensamble: {
         status: "pending",
         label: "Pendiente",
-        workers: []
       },
+      ensamble1: {
+        status: "pending",
+        label: "pendiente"
+      },
+      ensamble2: {
+        status: "pending",
+        label: "Pendiente"
+      },
+      ensamble3: {
+        status: "pending",
+        label: "Pendiente"
+      },
+      ensamble4: {
+        status: "pending",
+        label: "Pendiente"
+      }
     },
   },
-]
-
-export const stageColumns = [
-  { key: "corte", label: "CORTE", workers: 2 },
-  { key: "dobles", label: "DOBLES", workers: 3 },
-  { key: "soldadura", label: "SOLDADURA", workers: 5 },
-  { key: "pintura", label: "PINTURA", workers: 2 },
-  { key: "ensamble", label: "ENSAMBLE", workers: 5 },
 ];

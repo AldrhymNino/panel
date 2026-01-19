@@ -1,35 +1,58 @@
-import { DndContext } from "@dnd-kit/core"
-import { stageColumns } from "../data/projects"
-import StageWorkersColumn from "./StageWorkersColumn"
-import WorkersPoolColumn from "./WorkersPoolColumn"
-import { useState } from "react"
-import "../styles/stage-workers.css"
+import { DndContext, DragOverlay } from "@dnd-kit/core";
+import StageWorkersColumn from "./StageWorkersColumn";
+import WorkersPoolColumn from "./WorkersPoolColumn";
+import WorkerCardOverlay from "./WorkerCardOverlay";
 
-function StageWorkersPanel({ stages, handleDragEnd }) {
-  const [search, setSearch] = useState("")
+import { useState } from "react";
+import "../styles/stage-workers.css";
+import { useStageWorkers } from "../context/StageWorkersContext";
+
+function StageWorkersPanel({ handleDragEnd, isVisible }) {
+  const [search, setSearch] = useState("");
+  const [activeWorker, setActiveWorker] = useState(null);
+
+  const { stageColumns, stages } = useStageWorkers();
 
   return (
-    <DndContext onDragEnd={handleDragEnd}>
-      <div className="stage-workers-panel">
-        {/* POOL */}
+    <DndContext
+      onDragStart={(event) => {
+        setActiveWorker(event.active.id);
+      }}
+      onDragEnd={(event) => {
+        handleDragEnd(event);
+        setActiveWorker(null);
+      }}
+      onDragCancel={() => setActiveWorker(null)}
+    >
+      {/* PANEL */}
+      <div className={`stage-workers-panel ${isVisible && "show"}`}>
+        {/* POOL DE TRABAJADORES */}
         <WorkersPoolColumn
-          workers={stages.pool}
-          search={search}
-          setSearch={setSearch}
+            workers={stages.pool}
+            search={search}
+            setSearch={setSearch}
         />
 
-        {/* STAGES */}
-        {stageColumns.map(col => (
-          <StageWorkersColumn
-            key={col.key}
-            stageKey={col.key}
-            label={col.label}
-            workers={stages[col.key]}
-          />
-        ))}
+        {/* COLUMNAS DE STAGE */}
+        {stageColumns.map((col) => (
+            <StageWorkersColumn
+              key={col.key}
+              stageKey={col.key}
+              label={col.label}
+              workers={stages[col.key]}
+            />
+          )
+        )}
       </div>
+
+      {/* OVERLAY (SE RENDERIZA POR ENCIMA DE TODO) */}
+      <DragOverlay>
+        {activeWorker ? (
+          <WorkerCardOverlay name={activeWorker.split("|")[1]} />
+        ) : null}
+      </DragOverlay>
     </DndContext>
-  )
+  );
 }
 
-export default StageWorkersPanel
+export default StageWorkersPanel;

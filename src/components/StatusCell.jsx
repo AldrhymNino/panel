@@ -1,4 +1,4 @@
-import { AlertTriangle, Check } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 
 import "../styles/status-cell.css";
 import { Circle } from "lucide-react";

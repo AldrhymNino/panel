@@ -8,18 +8,17 @@ import {
 import { Users, ChevronUp, ChevronDown } from "lucide-react";
 
 import StageWorkersPanel from "./StageWorkersPanel";
-import { useStageWorkers } from "../hooks/useStageWorkers";
-import { stageColumns } from "../data/projects.js";
+import { useStageWorkers } from "../context/StageWorkersContext";
 import ProjectItem from "./ProjectItem.jsx";
 
 import "../styles/project-table.css";
 
 function ProjectTable({ handleDragEnd, filtered }) {
   const {
-    stages,
     visible,
     toggleVisible,
     handleDragEnd: handleWorkersDragEnd,
+    stageColumns
   } = useStageWorkers();
 
   return (
@@ -29,12 +28,10 @@ function ProjectTable({ handleDragEnd, filtered }) {
           items={filtered.map((p) => p.id)}
           strategy={verticalListSortingStrategy}
         >
-          {visible && (
-            <StageWorkersPanel
-              stages={stages}
-              handleDragEnd={handleWorkersDragEnd}
-            />
-          )}
+          <StageWorkersPanel
+            handleDragEnd={handleWorkersDragEnd}
+            isVisible={visible}
+          />
 
           {/* TABLE */}
           <div className="project-table">

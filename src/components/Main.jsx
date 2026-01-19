@@ -5,6 +5,7 @@ import FilterTabs from "./FilterTabs";
 import ProjectTable from "./ProjectTable";
 
 import { useProjects } from '../hooks/useProjects'
+import { StageWorkersProvider } from "../context/StageWorkersContext";
 
 const Main = () => {
     const {
@@ -42,8 +43,9 @@ const Main = () => {
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} placeholder={"Buscar por ID, Cliente o Proyecto..."} />
           <FilterTabs activeFilter={activeFilter} setActiveFilter={setActiveFilter} counts={filterCounts} />
         </div>
-
-        <ProjectTable filtered={filtered} handleDragEnd={handleDragEnd} />
+        <StageWorkersProvider>
+          <ProjectTable filtered={filtered} handleDragEnd={handleDragEnd} />
+        </StageWorkersProvider>
       </main>
     );
 };

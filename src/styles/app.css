@@ -1,20 +1,24 @@
 .app {
-  min-height: 100vh;
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'aside-nav container';
   background-color: var(--color-gray-50);
 }
 
 .container {
-  width: calc(100% - 80px);
+  width: 100%;
   display: flex;
   flex-direction: column;
+  grid-area: container;
   height: 100vh;
 }
 
 .main-content {
   flex: 1;
-  padding: 24px 32px;
-  max-width: 1600px;
+  padding: 80px 32px;
+  /* max-width: 1600px; */
   margin: 0 auto;
   width: 100%;
 }

@@ -11,12 +11,14 @@ function WorkersPoolColumn({ workers, search, setSearch }) {
 
   return (
     <div ref={setNodeRef} className="stage-workers-column pool">
-      <div className="stage-workers-header">
-        <span>TRABAJADORES</span>
-        <span className="stage-workers-count">{filtered.length}</span>
+      <div className="stage-workers-header header-pool">
+        <div className="stage-workers-header-title">
+            <span>TRABAJADORES</span>
+            <span className="stage-workers-count">{filtered.length}</span>
+        </div>
+        <Search searchTerm={search} setSearchTerm={setSearch} placeholder={"Buscar Trabajador"} />
       </div>
 
-      <Search searchTerm={search} setSearchTerm={setSearch} placeholder={"Buscar Trabajador"} />
 
       <div className="stage-workers-list">
         {filtered.map(worker => (

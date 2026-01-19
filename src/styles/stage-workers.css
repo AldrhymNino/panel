@@ -1,13 +1,29 @@
 /* PANEL GENERAL */
 .stage-workers-panel {
   display: grid;
-  grid-template-columns: 260px repeat(5, minmax(180px, 1fr));
+  width: max-content;
+  background-color: var(--color-gray-50);
+  grid-template-columns: 230px repeat(9, minmax(180px, 1fr));
+  grid-template-rows: 260px;
+  align-items: end;
   gap: 14px;
   margin-bottom: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s ease-in-out, visibility .2s ease-in-out, top .2s ease-in-out ;
+  position: absolute;
+  top: -250px;
+}
+
+.stage-workers-panel.show {
+    visibility: visible;
+    opacity: 1;
+    top: -270px;
 }
 
 /* COLUMNA BASE */
 .stage-workers-column {
+    max-height: 260px;
   display: flex;
   flex-direction: column;
   background: var(--color-white);
@@ -22,15 +38,29 @@
   background: var(--color-gray-50);
 }
 
+.header-pool {
+  padding-bottom: 10px;
+  border-bottom: solid 1px var(--color-gray-200);
+}
+
 /* HEADER DE COLUMNA */
 .stage-workers-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
   font-weight: 600;
   color: var(--color-gray-700);
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+  
+}
+
+.stage-workers-header-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 /* CONTADOR */
@@ -68,6 +98,7 @@
 
 /* LISTA DE TRABAJADORES */
 .stage-workers-list {
+    overflow-x: scroll;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -97,6 +128,13 @@
   cursor: grabbing;
   box-shadow: var(--shadow-md);
 }
+
+.worker-card--overlay {
+  box-shadow: var(--shadow-md);
+  background: var(--color-white);
+  cursor: grabbing;
+}
+
 
 /* FEEDBACK VISUAL DURANTE DRAG */
 .worker-card[data-dnd-draggable] {

@@ -9,8 +9,10 @@ function StageWorkersColumn({ stageKey, label, workers }) {
   return (
     <div ref={setNodeRef} className="stage-workers-column">
       <div className="stage-workers-header">
-        <span>{label}</span>
-        <span className="stage-workers-count">{workers.length}</span>
+        <div className="stage-workers-header-title">
+            <span>{label}</span>
+            <span className="stage-workers-count">{workers.length}</span>
+        </div>
       </div>
 
       <div className="stage-workers-list">
